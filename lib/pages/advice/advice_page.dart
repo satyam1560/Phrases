@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
+import '../../injection.dart';
 import 'bloc/advicer_bloc.dart';
 import 'widget/advice_field.dart';
 
@@ -14,7 +15,7 @@ class AdvicePageWrapperProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AdvicerBloc(),
+      create: (context) => sl<AdvicerBloc>(),
       child: const AdvicePage(),
     );
   }
@@ -64,6 +65,8 @@ class AdvicePage extends StatelessWidget {
                     );
                   } else if (state is AdvicerStateError) {
                     return ErrorMessage(message: state.message);
+                    // final errorMessage = ErrorMessage(message: state.message);
+                    // return errorMessage;
                   }
                   return const SizedBox();
                 },

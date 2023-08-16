@@ -14,6 +14,7 @@ class AdvicerStateLoading extends AdvicerCubitState {}
 class AdvicerStateLoaded extends AdvicerCubitState {
   final String advice;
   const AdvicerStateLoaded({required this.advice});
+
   @override
   List<Object?> get props => [advice];
 }
