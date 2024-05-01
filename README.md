@@ -1,16 +1,28 @@
-# advicer
 
-A new Flutter project.
+# Phrases
 
-## Getting Started
+This application is build on CleanArchitecture with customization theming within application
+this application also uses DI.
 
-This project is a starting point for a Flutter application.
+#### Screenshots
 
-A few resources to get you started if this is your first Flutter project:
+![App Screenshot](./assets/ss.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features
+
+- API call
+- state management (Bloc)
+- Dark mode || Light mode 
+- DI by using get_it
+
+## API Reference
+
+#### Get all items
+
+```http
+  GET https://fakestoreapi.com/products
+```
+
+
+
