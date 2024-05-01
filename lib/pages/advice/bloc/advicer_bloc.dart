@@ -11,7 +11,7 @@ part 'advicer_state.dart';
 class AdvicerBloc extends Bloc<AdvicerEvent, AdvicerState> {
   final AdviceUseCases adviceUseCases;
   AdvicerBloc({required this.adviceUseCases}) : super(AdvicerInitial()) {
-    String _mapFailureToMessage(Failure failure) {
+    String mapFailureToMessage(Failure failure) {
       switch (failure.runtimeType) {
         case ServerFailure:
           return 'Ups, Api Error.please try again';
@@ -29,7 +29,7 @@ class AdvicerBloc extends Bloc<AdvicerEvent, AdvicerState> {
       final failureOrAdvice = await adviceUseCases.getAdvice();
       failureOrAdvice.fold(
           (failure) =>
-              emit(AdvicerStateError(message: _mapFailureToMessage(failure))),
+              emit(AdvicerStateError(message: mapFailureToMessage(failure))),
           (advice) => emit(AdvicerStateLoaded(advice: advice.advice)));
       // debugPrint(advice.advice);
 
